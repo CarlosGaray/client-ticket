@@ -22,7 +22,7 @@ export class HomeComponent {
   registerForm: FormGroup = new FormGroup({});
   updateForm: FormGroup = new FormGroup({});
 
-  private url = "http://localhost:5200/tickets";
+  private url = "https://server-ticket.onrender.com/tickets";
 
   data: any[] = [];
 
