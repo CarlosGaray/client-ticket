@@ -32,6 +32,7 @@ export class HomeComponent {
   First = '';
   Grade = '';
   Number = '';
+  Amount = '';
 
   id = '';
 
@@ -48,20 +49,21 @@ export class HomeComponent {
       last: '',
       dni: '',
       numberphone: '',
-      grade: ''
+      grade: '',
+      amount: ''
     });
   }
 
   async onSubmit() {
-    const { first, last, dni, numberphone, grade } = this.registerForm.value;
+    const { first, last, dni, numberphone, grade, amount } = this.registerForm.value;
     if (this.isEditMode) {
-      await this.updateData(this.id, first, last, dni, numberphone, grade);
+      await this.updateData(this.id, first, last, dni, numberphone, grade, amount);
       await this.fetchData();
       this.registerForm.reset();
       this.isEditMode = false;
       this.isSubmitMode = true;
     } else {
-      await this.postData(first, last, dni, numberphone, grade);
+      await this.postData(first, last, dni, numberphone, grade, amount);
       await this.fetchData();
       this.registerForm.reset();
     }
@@ -71,7 +73,7 @@ export class HomeComponent {
     await this.fetchData();
   }
 
-  async postData(first: string, last: string, dni: string, numberphone: string, grade: string){
+  async postData(first: string, last: string, dni: string, numberphone: string, grade: string, amount: string){
     await fetch(this.url, {
       method: "POST",
       headers: {
@@ -82,12 +84,13 @@ export class HomeComponent {
         last,
         dni,
         numberphone,
-        grade
+        grade,
+        amount
       })
     });
   }
 
-  async updateData(id: string, first: string, last: string, dni: string, numberphone: string, grade: string){
+  async updateData(id: string, first: string, last: string, dni: string, numberphone: string, grade: string, amount: string){
     await fetch(`${this.url}/${id}`, {
       method: "PUT",
       headers: {
@@ -98,7 +101,8 @@ export class HomeComponent {
         last,
         dni,
         numberphone,
-        grade
+        grade,
+        amount
       })
     });
   }
@@ -120,6 +124,7 @@ export class HomeComponent {
     this.First = row.first;
     this.Grade = row.grade;
     this.Number = row.dni;
+    this.Amount = row.amount
   }
 
   async deleteUser(id: any) {

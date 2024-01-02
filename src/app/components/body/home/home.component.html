@@ -30,10 +30,10 @@
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
             placeholder="941613371" required="">
         </div>
-        <div class="sm:col-span-2">
-          <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Seleccionar
+        <div class="w-full">
+          <label for="grades" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Seleccionar
             grado</label>
-          <select id="countries" formControlName="grade"
+          <select id="grades" formControlName="grade"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
             <option value="" disabled>Elegir...</option>
@@ -41,6 +41,15 @@
             <option>Estudiante</option>
             <option>Profesional</option>
           </select>
+        </div>
+        <div class="w-full">
+          <label for="amount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Número
+            de
+            teléfono</label>
+          <input type="text" name="amount" id="amount" pattern="[0-9]{1}"
+            formControlName="amount" pattern="[0-9]{9}"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+            placeholder="1" required="">
         </div>
       </div>
       <button type="button"
@@ -87,10 +96,11 @@
             <div class="side-date">
               <div class="info__item">Date</div>
               <div class="info__detail">1 Ene 2024</div>
+              <div class="info__detail">11:00AM</div>
             </div>
             <div class="side-time">
-              <div class="info__item">Time</div>
-              <div class="info__detail">11:00AM</div>
+              <div class="info__item">Cantidad</div>
+              <div class="info__detail">{{Amount}}</div>
             </div>
           </div>
         </div>
@@ -115,6 +125,7 @@
         <th scope="col" class="px-6 py-3"> DNI </th>
         <th scope="col" class="px-6 py-3"> Número de telefóno </th>
         <th scope="col" class="px-6 py-3"> Grado </th>
+        <th scope="col" class="px-6 py-3"> Cantidad </th>
         <th scope="col" class="px-6 py-3"> Acción </th>
       </tr>
     </thead>
@@ -127,6 +138,7 @@
       <td class="px-6 py-3"> {{row.dni}} </td>
       <td class="px-6 py-3"> {{row.numberphone}} </td>
       <td class="px-6 py-3"> {{row.grade}} </td>
+      <td class="px-6 py-3"> {{row.amount}} </td>
       <td class="px-6 py-3 flex items-center justify-end">
         <button
           class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 "
