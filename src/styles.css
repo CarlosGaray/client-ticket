@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --size: 1;
+  --background: #111828;
+  --color1: #d25778;
+  --color2: #ec585c;
+  --color3: #e7d155;
+  --color4: #56a8c6;
+  --mustard: #f7d337;
+  --color-blue: #4286f5;
+  --color-dark: #111828;
+  --color-red: #ea4235;
+  --color-yellow: #fabd03;
+  --color-black: #484a52;
+  --color-scrollbar-background: #f3f2f7;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-track {
+  background: var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-track {
+  background: var(--color-scrollbar-background);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: var(--color-dark);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

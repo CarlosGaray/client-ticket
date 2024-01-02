@@ -1,0 +1,152 @@
+<div class="grid grid-cols-1 md:grid-cols-2 gap-0 lg:py-16">
+  <div class="py-0 px-4 mx-auto max-w-2xl lg:py-0">
+    <form [formGroup]="registerForm">
+      <h3 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">{{ isEditMode ? 'Edit' : 'Add' }} User</h3>
+      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+        <div class="w-full">
+          <label for="nombres" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombres</label>
+          <input type="text" name="nombres" id="nombres" formControlName="first"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+            placeholder="Carlos Felix" required="">
+        </div>
+        <div class="w-full">
+          <label for="apellidos" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellidos</label>
+          <input type="text" name="apellidos" id="apellidos" formControlName="last"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+            placeholder="Garay Haro" required="">
+        </div>
+        <div class="w-full">
+          <label for="dni" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">DNI</label>
+          <input type="text" name="dni" id="dni" pattern="[0-9]{8}" formControlName="dni"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+            placeholder="12435674" required="">
+        </div>
+        <div class="w-full">
+          <label for="numero_telefono" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Número
+            de
+            teléfono</label>
+          <input type="text" name="numero_telefono" id="numero_telefono" pattern="[0-9]{8}"
+            formControlName="numberphone" pattern="[0-9]{9}"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+            placeholder="941613371" required="">
+        </div>
+        <div class="sm:col-span-2">
+          <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Seleccionar
+            grado</label>
+          <select id="countries" formControlName="grade"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+
+            <option value="" disabled>Elegir...</option>
+            <option>Otro</option>
+            <option>Estudiante</option>
+            <option>Profesional</option>
+          </select>
+        </div>
+      </div>
+      <button type="button"
+        class="mt-4 text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+        (click)="onSubmit()">{{ isEditMode ? 'Update' :
+        'Submit' }}</button>
+        <button type="button" class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" (click)="refresh()">Refresh</button>
+    </form>
+  </div>
+  <div>
+    <div class="ticket-visual_visual" id="ticket">
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="ticket-visual-wrapper">
+        <div class="ticket-visual_profile">
+          <div class="ticket-profile_profile">
+            <div class="ticket-stub">
+              <h3>Admit</h3>
+              <h1>One</h1>
+              <div class="barcode">
+                <svg viewBox="0 0 130 30">
+                  <path
+                    d="M1.5 0H0v30h1.5V0zm118.587 0h-1v30h1V0zm-31 0h-1v30h1V0zm-56 0h-1v30h1V0zm3.5 0h-1.5v30h1.5V0zm87 0h-1.5v30h1.5V0zm-25 0h-1.5v30h1.5V0zm4 0h-1.5v30h1.5V0zM5 0H3v30h2V0zm70 0h-2v30h2V0zm20 0h-2v30h2V0zm20 0h-2v30h2V0zM62 0h-2v30h2V0zM41.568 0h-2v30h2V0zM9.667 0H7v30h2.667V0zm21.385 0h-3.26v30h3.26V0zM67.03 0h-3.26v30h3.26V0zm20 0h-3.26v30h3.26V0zm20 0h-3.26v30h3.26V0zM15.889 0h-3.556v30h3.556V0zm41 0h-3.556v30h3.556V0zM25.283 0h-6.321v30h6.32V0zm57.52 0h-6.32v30h6.32V0zM51.613 0h-8.428v30h8.428V0zm78.192 0h-4.436v30h4.436V0z" />
+                </svg>
+              </div>
+            </div>
+            <div class="ticket-profile_text">
+              <p class="ticket-profile_name">{{First}}</p>
+              <p class="ticket-profile_username">
+                <span class="ticket-profile_githubIcon">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill="currentColor"
+                      d="m18.774 8.245-.892-.893a1.5 1.5 0 0 1-.437-1.052V5.036a2.484 2.484 0 0 0-2.48-2.48H13.7a1.5 1.5 0 0 1-1.052-.438l-.893-.892a2.484 2.484 0 0 0-3.51 0l-.893.892a1.5 1.5 0 0 1-1.052.437H5.036a2.484 2.484 0 0 0-2.48 2.481V6.3a1.5 1.5 0 0 1-.438 1.052l-.892.893a2.484 2.484 0 0 0 0 3.51l.892.893a1.5 1.5 0 0 1 .437 1.052v1.264a2.484 2.484 0 0 0 2.481 2.481H6.3a1.5 1.5 0 0 1 1.052.437l.893.892a2.484 2.484 0 0 0 3.51 0l.893-.892a1.5 1.5 0 0 1 1.052-.437h1.264a2.484 2.484 0 0 0 2.481-2.48V13.7a1.5 1.5 0 0 1 .437-1.052l.892-.893a2.484 2.484 0 0 0 0-3.51Z" />
+                    <path fill="#fff"
+                      d="M8 13a1 1 0 0 1-.707-.293l-2-2a1 1 0 1 1 1.414-1.414l1.42 1.42 5.318-3.545a1 1 0 0 1 1.11 1.664l-6 4A1 1 0 0 1 8 13Z" />
+                  </svg>
+                </span>
+                &nbsp;{{Grade}}
+              </p>
+            </div>
+          </div>
+          <div class="ticket-event">
+            <div class="side-date">
+              <div class="info__item">Date</div>
+              <div class="info__detail">1 Ene 2024</div>
+            </div>
+            <div class="side-time">
+              <div class="info__item">Time</div>
+              <div class="info__detail">11:00AM</div>
+            </div>
+          </div>
+        </div>
+        <div class="ticket-visual_ticket-number-wrapper">
+          <div class="ticket-visual_ticket-number">№ {{Number}}</div>
+        </div>
+      </div>
+    </div>
+    <button type="button"
+      class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-5"
+      (click)="download(Number)">Descargar ticket</button>
+  </div>
+</div>
+
+<div id="table" class="mx-auto max-w-screen-xl mb-11 px-4 lg:px-12 relative overflow-x-auto p-3 sm:p-5">
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="px-6 py-3"> Id</th>
+        <th scope="col" class="px-6 py-3"> Nombres </th>
+        <th scope="col" class="px-6 py-3"> Apellidos </th>
+        <th scope="col" class="px-6 py-3"> DNI </th>
+        <th scope="col" class="px-6 py-3"> Número de telefóno </th>
+        <th scope="col" class="px-6 py-3"> Grado </th>
+        <th scope="col" class="px-6 py-3"> Acción </th>
+      </tr>
+    </thead>
+    <tbody>
+      @for ( row of data; track row.id; let i = $index){
+      <tr class="border-b dark:border-gray-700"></tr>
+      <td class="px-6 py-3"> {{i}} </td>
+      <td class="px-6 py-3"> {{row.first}} </td>
+      <td class="px-6 py-3"> {{row.last}} </td>
+      <td class="px-6 py-3"> {{row.dni}} </td>
+      <td class="px-6 py-3"> {{row.numberphone}} </td>
+      <td class="px-6 py-3"> {{row.grade}} </td>
+      <td class="px-6 py-3 flex items-center justify-end">
+        <button
+          class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 "
+          (click)="openShow(row)">
+          Show
+        </button>
+        <button
+          class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+          (click)="openEditForm(row._id)">
+          Edit
+        </button>
+        <button
+          class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+          (click)="deleteUser(row._id)">
+          Delete
+        </button>
+      </td>
+
+      }
+
+    </tbody>
+  </table>
+</div>
