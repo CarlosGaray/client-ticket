@@ -204,7 +204,7 @@ export class HomeComponent {
 
         this.value_index = Math.floor(Math.random() * (this.amount_index.length - 0) + 0);
 
-        const elements = this.elementRef.nativeElement.querySelectorAll(`.c${this.amount_index[this.value_index]}`);
+        const elements = this.elementRef.nativeElement.querySelectorAll(`.c${this.value_index}`);
 
         elements.forEach((element: HTMLElement) => {
           this.renderer.setStyle(element, 'background-color', 'red');
@@ -215,7 +215,7 @@ export class HomeComponent {
       // después de 5 segundos parar
       setTimeout(() => {
         clearInterval(timerId);
-        const elements = this.elementRef.nativeElement.querySelectorAll(`.c${this.amount_index[this.value_index]}`);
+        const elements = this.elementRef.nativeElement.querySelectorAll(`.c${this.value_index}`);
 
         elements.forEach((element: HTMLElement) => {
           this.renderer.setStyle(element, 'background-color', 'red');

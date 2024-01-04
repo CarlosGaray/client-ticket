@@ -166,7 +166,7 @@
   <h3 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Sorteo</h3>
   <div class="grid-cols-1 md:grid-cols-2">
     @for ( amount of amount_index; track amount; let i = $index){
-    <button type="button" [ngClass]="'all c' + amount"
+    <button type="button" [ngClass]="'all c' + i"
       [ngStyle]="{'color': 'white', 'padding': '6px 15px', 'text-align': 'center', 'text-decoration': 'none', 'font-size': '16px', 'margin': '4px 2px', 'cursor': 'pointer', 'background-color': bgColor, 'border-radius': '3px', 'border': '2px solid red' }">{{amount}}</button>
     }
   </div>
