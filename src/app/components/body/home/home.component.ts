@@ -130,11 +130,15 @@ export class HomeComponent {
       const data = await response.json();
       this.data = data;
 
+      this.amount_index = [];
+
       for(let i = 0; i < data.length; i++) {
         for(let j = 0; j < parseInt(data[i].amount); j++){
           this.amount_index.push(i);
         }
       }
+
+      console.log(this.amount_index);
 
     } catch (error) {
       console.error('Error al obtener los datos:', error);
